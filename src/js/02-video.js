@@ -15,7 +15,7 @@ function onTimeUpdate(data) {
 player.on('timeupdate', throttle(onTimeUpdate, 1000));
 
 function onPageReload() {
-    savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
     if(savedData) {
         player.setCurrentTime(savedData);
     }
