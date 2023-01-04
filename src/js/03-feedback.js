@@ -28,6 +28,12 @@ function populateForm() {
     const savedMessage = localStorage.getItem(LOCAL_STORAGE_KEY);
     const parsedMessage = JSON.parse(savedMessage);
     if(parsedMessage) {
+        if(parsedMessage.email === undefined) {
+            parsedMessage.email = "";
+        }
+        if(parsedMessage.message === undefined) {
+            parsedMessage.message = "";
+        }
         input.value = parsedMessage.email;
         textarea.value = parsedMessage.message;
     }
